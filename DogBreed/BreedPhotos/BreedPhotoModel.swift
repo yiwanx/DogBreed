@@ -1,0 +1,10 @@
+//
+// Created by Ivan Petukhov on 31.07.2022.
+//
+
+import Foundation
+
+struct BreedPhotoModel {
+    let imageUrl: URL
+    let breed: String
+}

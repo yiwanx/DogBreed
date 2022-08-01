@@ -7,16 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D640F8EA3798BAA24CA7BC09 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646710E62207D1553E1901A /* Service.swift */; };
+		D641855E7DDA6E973D78DC88 /* URLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64C91F5337F02FE3CE43F34 /* URLS.swift */; };
 		D641AD50521C323C75C96ECF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6439B7781007422100EEFC1 /* LaunchScreen.storyboard */; };
+		D642688F4AF3E0C7C46AC72E /* BreedPhotoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644DE3E033E88B8D826D5B1 /* BreedPhotoDetailInteractor.swift */; };
 		D6426D86AC434B0B1C60751C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6440053996D25891427E329 /* AppDelegate.swift */; };
 		D643606224527F89807EFAB7 /* DogBreedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D649B3F42BD1AC42C77667A1 /* DogBreedUITestsLaunchTests.swift */; };
+		D6444924AEBFBC5CEEEBA80B /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64F1A48D8EC507ACD243AB2 /* PhotoCollectionCell.swift */; };
+		D644531644F65BEFD6CDD6FA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643F62458C46FAE1F89294E /* UIView+Extensions.swift */; };
 		D64498B54F69ABA84D4AE48C /* DogBreedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6480DDE4941ACAF287D74EB /* DogBreedTests.swift */; };
+		D644B4EF6F8C82CBE4340CCC /* BreedPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64B605AE89DDA62D84013D4 /* BreedPhotoModel.swift */; };
+		D644C69FCC358E7E06C62483 /* BreedListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D647A307113FC5B46DCA98E9 /* BreedListCell.swift */; };
 		D644DD3C25CEC1FD213CBB21 /* DogBreedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EB6BC6D480592C459F98D /* DogBreedUITests.swift */; };
+		D6458DE7412D240859E04A41 /* BreedURLStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64C5A6AFECD3822DC2B3F3E /* BreedURLStrings.swift */; };
+		D64910EF671E8289066306B9 /* BreedPhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646D83A064985A469386FF8 /* BreedPhotoDetailViewController.swift */; };
+		D649A1D15CF25D490E9BB8E4 /* BreedListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64616E24B6C7DB9A9710813 /* BreedListInteractor.swift */; };
+		D64BDA8BF7A4942895CCD5DD /* BaseBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64CE5E7EC7518BD1C349AD0 /* BaseBusinessLogic.swift */; };
 		D64C1DEF5529A23BC0316F3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D649E360C3FB370BAAD69065 /* ViewController.swift */; };
 		D64C5E37F7B3BCF181F4854E /* DogBreed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D646C4D1A0188A09084E509B /* DogBreed.xcdatamodeld */; };
-		D64CF3F0C64B0A536B0EE143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64446C6F0E5BE93CBB5134F /* Main.storyboard */; };
+		D64CF2BD8F1CFD1500304C8C /* BreedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64777A173DF7B72868B5198 /* BreedList.swift */; };
+		D64D49E0E23897ED1E53530A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64356C030355779177649C4 /* ImageLoader.swift */; };
+		D64D644F8AFC66666E87725A /* BreedPhotosInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64CEBD7A9BC36494419F07B /* BreedPhotosInteractor.swift */; };
 		D64D77D391D3EEA39DD2DEEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D643986619429A3DE8840420 /* Assets.xcassets */; };
+		D64D7C4093F60A07CFB17212 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644B935BC138C1108EDE154 /* Errors.swift */; };
 		D64DF47EC5C081B6BE846D50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D646BF1C762B1FE3F2430B57 /* SceneDelegate.swift */; };
+		D64E6C256D82A6874B22A0F0 /* BreedPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64324F3D8A0DA0F02D23C93 /* BreedPhotosViewController.swift */; };
+		D64FA0E7C606DF40C992A76F /* BreedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6422F189DA3A97752854AB9 /* BreedListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,19 +53,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D640FEA1CC3DC5AFC94A6522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D6422F189DA3A97752854AB9 /* BreedListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedListViewController.swift; sourceTree = "<group>"; };
+		D64324F3D8A0DA0F02D23C93 /* BreedPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedPhotosViewController.swift; sourceTree = "<group>"; };
+		D64356C030355779177649C4 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		D643986619429A3DE8840420 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D643A9CA99DF7330BD508F18 /* DogBreed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBreed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D643F62458C46FAE1F89294E /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		D6440053996D25891427E329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D644B935BC138C1108EDE154 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		D644DE3E033E88B8D826D5B1 /* BreedPhotoDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedPhotoDetailInteractor.swift; sourceTree = "<group>"; };
 		D6453A7D92C85A5B399CF00B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		D64616E24B6C7DB9A9710813 /* BreedListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedListInteractor.swift; sourceTree = "<group>"; };
 		D646576226FA658B14FA8316 /* DogBreed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DogBreed.xcdatamodel; sourceTree = "<group>"; };
+		D646710E62207D1553E1901A /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D646BF1C762B1FE3F2430B57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D646D83A064985A469386FF8 /* BreedPhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedPhotoDetailViewController.swift; sourceTree = "<group>"; };
+		D64777A173DF7B72868B5198 /* BreedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedList.swift; sourceTree = "<group>"; };
+		D647A307113FC5B46DCA98E9 /* BreedListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedListCell.swift; sourceTree = "<group>"; };
 		D6480DDE4941ACAF287D74EB /* DogBreedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedTests.swift; sourceTree = "<group>"; };
 		D6482DD44E3E8DAE9C033DAE /* DogBreedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogBreedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D649B3F42BD1AC42C77667A1 /* DogBreedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D649E360C3FB370BAAD69065 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D64B605AE89DDA62D84013D4 /* BreedPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedPhotoModel.swift; sourceTree = "<group>"; };
+		D64C5A6AFECD3822DC2B3F3E /* BreedURLStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedURLStrings.swift; sourceTree = "<group>"; };
+		D64C91F5337F02FE3CE43F34 /* URLS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLS.swift; sourceTree = "<group>"; };
+		D64CE5E7EC7518BD1C349AD0 /* BaseBusinessLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBusinessLogic.swift; sourceTree = "<group>"; };
+		D64CEBD7A9BC36494419F07B /* BreedPhotosInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedPhotosInteractor.swift; sourceTree = "<group>"; };
 		D64E517B56C0F82B74D643CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D64EB6BC6D480592C459F98D /* DogBreedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedUITests.swift; sourceTree = "<group>"; };
+		D64F1A48D8EC507ACD243AB2 /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		D64FD71BF88D2DFF74E21A2D /* DogBreedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogBreedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -78,6 +110,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D6416FB0B45C14FCDFA8F2D6 /* BreedList */ = {
+			isa = PBXGroup;
+			children = (
+				D6422F189DA3A97752854AB9 /* BreedListViewController.swift */,
+				D64616E24B6C7DB9A9710813 /* BreedListInteractor.swift */,
+				D64777A173DF7B72868B5198 /* BreedList.swift */,
+				D647A307113FC5B46DCA98E9 /* BreedListCell.swift */,
+			);
+			path = BreedList;
+			sourceTree = "<group>";
+		};
+		D64265EC17E5D24F2C555450 /* FavouritesPhotos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FavouritesPhotos;
+			sourceTree = "<group>";
+		};
 		D64529FA96C7BBD2116D2A8A /* DogBreedTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +143,35 @@
 				D649B3F42BD1AC42C77667A1 /* DogBreedUITestsLaunchTests.swift */,
 			);
 			path = DogBreedUITests;
+			sourceTree = "<group>";
+		};
+		D647A1CFF73C531DB0C53883 /* BaseProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				D64CE5E7EC7518BD1C349AD0 /* BaseBusinessLogic.swift */,
+			);
+			path = BaseProtocols;
+			sourceTree = "<group>";
+		};
+		D648F06FBD2F5454339DCFD9 /* BreedPhotoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D646D83A064985A469386FF8 /* BreedPhotoDetailViewController.swift */,
+				D644DE3E033E88B8D826D5B1 /* BreedPhotoDetailInteractor.swift */,
+			);
+			path = BreedPhotoDetail;
+			sourceTree = "<group>";
+		};
+		D649EDB630E5608B42D56E4E /* BreedPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				D64324F3D8A0DA0F02D23C93 /* BreedPhotosViewController.swift */,
+				D64F1A48D8EC507ACD243AB2 /* PhotoCollectionCell.swift */,
+				D64CEBD7A9BC36494419F07B /* BreedPhotosInteractor.swift */,
+				D64C5A6AFECD3822DC2B3F3E /* BreedURLStrings.swift */,
+				D64B605AE89DDA62D84013D4 /* BreedPhotoModel.swift */,
+			);
+			path = BreedPhotos;
 			sourceTree = "<group>";
 		};
 		D64BE0ADB289E1F1DEDFDDAE /* Products */ = {
@@ -125,7 +204,16 @@
 				D6453A7D92C85A5B399CF00B /* Info.plist */,
 				D646BF1C762B1FE3F2430B57 /* SceneDelegate.swift */,
 				D649E360C3FB370BAAD69065 /* ViewController.swift */,
-				D64446C6F0E5BE93CBB5134F /* Main.storyboard */,
+				D6416FB0B45C14FCDFA8F2D6 /* BreedList */,
+				D647A1CFF73C531DB0C53883 /* BaseProtocols */,
+				D64C91F5337F02FE3CE43F34 /* URLS.swift */,
+				D646710E62207D1553E1901A /* Service.swift */,
+				D649EDB630E5608B42D56E4E /* BreedPhotos */,
+				D643F62458C46FAE1F89294E /* UIView+Extensions.swift */,
+				D644B935BC138C1108EDE154 /* Errors.swift */,
+				D64356C030355779177649C4 /* ImageLoader.swift */,
+				D648F06FBD2F5454339DCFD9 /* BreedPhotoDetail */,
+				D64265EC17E5D24F2C555450 /* FavouritesPhotos */,
 			);
 			path = DogBreed;
 			sourceTree = "<group>";
@@ -191,12 +279,16 @@
 /* Begin PBXProject section */
 		D648CD88A939FE780BE1A662 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = D6459FBE5AC6C44B5F1EA102 /* Build configuration list for PBXProject "DogBreed" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
+				Base,
 			);
 			mainGroup = D64C29B76FFEB380F1AE1D81;
 			productRefGroup = D64BE0ADB289E1F1DEDFDDAE /* Products */;
@@ -224,7 +316,6 @@
 			files = (
 				D64D77D391D3EEA39DD2DEEC /* Assets.xcassets in Resources */,
 				D641AD50521C323C75C96ECF /* LaunchScreen.storyboard in Resources */,
-				D64CF3F0C64B0A536B0EE143 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +354,23 @@
 				D64C5E37F7B3BCF181F4854E /* DogBreed.xcdatamodeld in Sources */,
 				D64DF47EC5C081B6BE846D50 /* SceneDelegate.swift in Sources */,
 				D64C1DEF5529A23BC0316F3F /* ViewController.swift in Sources */,
+				D64FA0E7C606DF40C992A76F /* BreedListViewController.swift in Sources */,
+				D649A1D15CF25D490E9BB8E4 /* BreedListInteractor.swift in Sources */,
+				D64BDA8BF7A4942895CCD5DD /* BaseBusinessLogic.swift in Sources */,
+				D641855E7DDA6E973D78DC88 /* URLS.swift in Sources */,
+				D64CF2BD8F1CFD1500304C8C /* BreedList.swift in Sources */,
+				D640F8EA3798BAA24CA7BC09 /* Service.swift in Sources */,
+				D644C69FCC358E7E06C62483 /* BreedListCell.swift in Sources */,
+				D64E6C256D82A6874B22A0F0 /* BreedPhotosViewController.swift in Sources */,
+				D644531644F65BEFD6CDD6FA /* UIView+Extensions.swift in Sources */,
+				D6444924AEBFBC5CEEEBA80B /* PhotoCollectionCell.swift in Sources */,
+				D64D644F8AFC66666E87725A /* BreedPhotosInteractor.swift in Sources */,
+				D6458DE7412D240859E04A41 /* BreedURLStrings.swift in Sources */,
+				D64D7C4093F60A07CFB17212 /* Errors.swift in Sources */,
+				D64D49E0E23897ED1E53530A /* ImageLoader.swift in Sources */,
+				D64910EF671E8289066306B9 /* BreedPhotoDetailViewController.swift in Sources */,
+				D642688F4AF3E0C7C46AC72E /* BreedPhotoDetailInteractor.swift in Sources */,
+				D644B4EF6F8C82CBE4340CCC /* BreedPhotoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,14 +396,6 @@
 				D64E517B56C0F82B74D643CC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		D64446C6F0E5BE93CBB5134F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D640FEA1CC3DC5AFC94A6522 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -326,16 +426,17 @@
 				INFOPLIST_FILE = DogBreed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiwan.tech.DogBreed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -447,8 +548,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -463,16 +563,17 @@
 				INFOPLIST_FILE = DogBreed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiwan.tech.DogBreed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -533,6 +634,7 @@
 				D64E2D38692830ACCC093255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D641CA84D79AAD03A1478756 /* Build configuration list for PBXNativeTarget "DogBreed" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +643,7 @@
 				D648E07151381920067D5081 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6459FBE5AC6C44B5F1EA102 /* Build configuration list for PBXProject "DogBreed" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +661,7 @@
 				D64C7C18C515CD4852129CC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
