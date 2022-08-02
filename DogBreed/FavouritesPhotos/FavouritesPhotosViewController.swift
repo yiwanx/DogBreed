@@ -9,10 +9,11 @@ protocol FavouritesPhotosDisplayLogic: BreedPhotosDisplayLogic {
 }
 
 class FavouritesPhotosViewController: BreedPhotosViewController, FavouritesPhotosDisplayLogic {
-    var favouriteBreeds: [String] = []
     var stackView: UIStackView!
     var label: UILabel!
     var searchButton: UIButton!
+
+    var favouriteBreeds: [String] = []
 
     var favouritesInteractor: FavouritesPhotosBusinessLogic? {
         interactor as? FavouritesPhotosBusinessLogic
@@ -21,23 +22,20 @@ class FavouritesPhotosViewController: BreedPhotosViewController, FavouritesPhoto
     override func loadView() {
         super.loadView()
         view.backgroundColor = .systemBackground
-        stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView = configuredStackView()
         label = configuredLabel(frame: .zero, text: "Search By Breed")
         searchButton = .systemButton(with: .init(systemName: "magnifyingglass.circle")!, target: self, action: #selector(searchTapped))
-        [label, searchButton].forEach { view in
+        [UIView(), label, searchButton].forEach { view in
             stackView.addArrangedSubview(view)
         }
         view.addSubview(stackView)
     }
 
-    /// Overriding in order to change constraints and add a toolbar.
+    /// Overriding in order to change constraints and add a search bar.
     override func setupConstraints() {
-        [gridCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-         gridCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-         gridCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+        [gridCollectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+         gridCollectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+         gridCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
          gridCollectionView.bottomAnchor.constraint(equalTo: stackView.topAnchor),
          stackView.topAnchor.constraint(equalTo: gridCollectionView.bottomAnchor),
          stackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
@@ -50,9 +48,7 @@ class FavouritesPhotosViewController: BreedPhotosViewController, FavouritesPhoto
     @objc func searchTapped() {
         let vc = UIViewController()
         vc.preferredContentSize = CGSize(width: view.frame.width, height: view.frame.height / 2 )
-        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: view.frame.height / 2 - 100))
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        let pickerView = configuredPicker()
         vc.view.addSubview(pickerView)
         let chooseBreedAlert = UIAlertController(title: "Choose breed", message: "", preferredStyle: UIAlertController.Style.alert)
         chooseBreedAlert.setValue(vc, forKey: "contentViewController")
@@ -64,6 +60,21 @@ class FavouritesPhotosViewController: BreedPhotosViewController, FavouritesPhoto
         present(chooseBreedAlert, animated: true)
     }
 
+    private func configuredStackView() -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 50
+        stackView.distribution = .equalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }
+
+    private func configuredPicker() -> UIPickerView {
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: view.frame.height / 2 ))
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        return pickerView
+    }
 }
 
 extension FavouritesPhotosViewController: UIPickerViewDataSource, UIPickerViewDelegate {

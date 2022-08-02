@@ -67,25 +67,19 @@ class BreedPhotoDetailViewController: UIViewController, BreedPhotoDetailDisplayL
         let height = (image.size.height / image.size.width) * view.frame.width
         mainImageView.configure(with: .init(x: 0, y: 0, width: width, height: height))
         view.addSubview(mainImageView)
-        setLikeIndicator()
-        let label = configuredLabel(frame: .init(x: 50, y: mainImageView.frame.height + 10,
-                width: 200, height: 50), text: "Add to favourites")
-        view.addSubview(label)
+        addLikeStack()
     }
 
-    func setLikeIndicator() {
+    func addLikeStack() {
+        let stack = UIStackView()
+        stack.distribution = .fillProportionally
         heartImageView.image = heartImage
-        heartImageView.configure(with: .init(x: 10, y: mainImageView.frame.height + 10, width: 50, height: 50))
-        view.addSubview(heartImageView)
-    }
-
-    func setLabel(frame: CGRect, text: String) {
-        let label = UILabel(frame: .init(x: 50, y: mainImageView.frame.height + 10,
-                width: 200, height: 50))
-        label.text = "Add to favourites"
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        view.addSubview(label)
+        heartImageView.configure(with: .init(origin: .zero, size: .init(width: 50, height: 50)))
+        let label = configuredLabel(frame: .init(origin: .zero, size: .init(width: 300, height: 50)), text: "Add to favourites")
+        stack.addArrangedSubview(heartImageView)
+        stack.addArrangedSubview(label)
+        stack.frame = .init(x: 10, y: mainImageView.frame.height + 10, width: view.frame.width, height: 50)
+        view.addSubview(stack)
     }
 
     func updateLikeIndicator() {
@@ -109,7 +103,7 @@ extension UIViewController {
     func configuredLabel(frame: CGRect, text: String) -> UILabel {
         let label = UILabel(frame: frame)
         label.text = text
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }
