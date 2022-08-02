@@ -24,8 +24,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return nc
     }()
 
+    lazy var favouritesNC: UINavigationController = {
+        let vc = FavouritesPhotosViewController()
+        let interactor = FavouritesPhotosInteractor()
+        vc.interactor = interactor
+        interactor.viewController = vc
+        let nc = UINavigationController(rootViewController: vc)
+        nc.tabBarItem = .init(title: "Favourites", image: UIImage(systemName: "heart.circle.fill")?.withTintColor(.lightText), selectedImage: UIImage(systemName: "heart.circle"))
+        return nc
+    }()
+
     var controllers: [UINavigationController] {
-        [breedListNC]
+        [breedListNC, favouritesNC]
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

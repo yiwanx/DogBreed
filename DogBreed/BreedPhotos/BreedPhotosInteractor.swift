@@ -5,22 +5,22 @@
 import UIKit
 
 protocol BreedPhotosBusinessLogic: BaseBusinessLogic {
-    var breedString: String { get }
+    var title: String { get }
 }
 
 class BreedPhotosInteractor: BreedPhotosBusinessLogic {
     weak var viewController: BreedPhotosDisplayLogic?
-    let breedString: String
+    let title: String
 
     init(breedString: String) {
-        self.breedString = breedString
+        self.title = breedString
     }
 
     func load() {
         Task {
             do {
-                let data = try await Service.shared.fetchData(from: .breedImages(for: breedString), type: BreedURLStrings.self)
-                let models = data.message.compactMap { URL(string: $0) }.map { BreedPhotoModel(imageUrl: $0, breed: breedString)}
+                let data = try await Service.shared.fetchData(from: .breedImages(for: title), type: BreedURLStrings.self)
+                let models = data.message.map { BreedPhotoModel(urlString: $0, breed: title)}
                 viewController?.displayPhotos(models)
             } catch {
                 print(error)

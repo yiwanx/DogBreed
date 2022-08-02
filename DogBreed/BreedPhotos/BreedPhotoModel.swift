@@ -4,7 +4,18 @@
 
 import Foundation
 
-struct BreedPhotoModel {
-    let imageUrl: URL
+struct BreedPhotoModel: Equatable {
+    let urlString: String
     let breed: String
+
+    static func ==(lhs: BreedPhotoModel, rhs: BreedPhotoModel) -> Bool {
+        if lhs.urlString != rhs.urlString {
+            return false
+        }
+        if lhs.breed != rhs.breed {
+            return false
+        }
+        return true
+    }
+
 }

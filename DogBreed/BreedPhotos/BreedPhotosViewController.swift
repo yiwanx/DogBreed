@@ -4,15 +4,18 @@
 
 import UIKit
 
-protocol BreedPhotosDisplayLogic: class {
+protocol BreedPhotosDisplayLogic: BreedPhotoDetailDelegate, AnyObject {
     func displayPhotos(_ models: [BreedPhotoModel])
 }
+
 class BreedPhotosViewController: UIViewController, BreedPhotosDisplayLogic {
 
     var interactor: BreedPhotosBusinessLogic?
     var gridCollectionView: UICollectionView!
 
     var models: [BreedPhotoModel] = []
+
+    var firstTime = true
 
     private var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -38,37 +41,56 @@ class BreedPhotosViewController: UIViewController, BreedPhotosDisplayLogic {
         gridCollectionView = setGridCollectionView()
         view.addSubview(gridCollectionView)
         gridCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        gridCollectionView.setupConstraints(with: view)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = interactor?.breedString.capitalized
+        setupConstraints()
+        title = interactor?.title.capitalized
         interactor?.load()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !firstTime {
+            interactor?.load()
+        }
+        firstTime = false
+    }
+
+    func setupConstraints() {
+        gridCollectionView.setupConstraints(with: view)
+    }
+
     func displayPhotos(_ models: [BreedPhotoModel]) {
+        /// If models are the same, the ignoring the call
+        guard self.models != models else { return }
         self.models = models
         DispatchQueue.main.async { [weak gridCollectionView] in
             gridCollectionView?.reloadData()
         }
     }
 
-    func routeToDetailedPhoto(_ url: URL) {
+    func routeToDetailedPhoto(_ model: BreedPhotoModel) {
         let vc = BreedPhotoDetailViewController()
-        let interactor = BreedPhotoDetailInteractor(url: url)
+        let interactor = BreedPhotoDetailInteractor(model: model)
         vc.interactor = interactor
+        vc.delegate = self
         interactor.viewController = vc
-        DispatchQueue.main.async { [weak navigationController] in
+        DispatchQueue.main.async { [weak navigationController, weak interactor] in
             navigationController?.present(vc, animated: true)
         }
+    }
+
+    func reloadCollection() {
+        interactor?.load()
     }
 }
 
 extension BreedPhotosViewController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let model = models[indexPath.row]
-        routeToDetailedPhoto(model.imageUrl)
+        routeToDetailedPhoto(model)
     }
 }
 
@@ -78,10 +100,13 @@ extension BreedPhotosViewController: UICollectionViewDataSourcePrefetching {
         for indexPath in indexPaths {
             let model = models[indexPath.row]
             Task {
+                guard let url = URL(string: model.urlString) else {
+                    throw URLError.isNotURL
+                }
                 do {
-                    try await ImageLoader.shared.preFetch(model.imageUrl)
+                    try await ImageLoader.shared.preFetch(url)
                 } catch {
-                    print("Prefetch Error \(error)")
+                    throw error
                 }
             }
         }
@@ -97,14 +122,14 @@ extension BreedPhotosViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionCell.reuseId, for: indexPath)
                 as? PhotoCollectionCell, indexPath.row < models.count  else { return .init() }
         let model = models[indexPath.row]
-        cell.id = model.imageUrl.relativeString
         Task { () -> _ in
-            let image = try await ImageLoader.shared.fetch(model.imageUrl)
+            guard let url = URL(string: model.urlString) else {
+                throw URLError.isNotURL
+            }
+            let image = try await ImageLoader.shared.fetch(url)
             await MainActor.run {
-                if cell.id == model.imageUrl.relativeString {
-                    cell.imageView.image = image
-                    cell.imageView.contentMode = .scaleAspectFill
-                }
+                cell.imageView.image = image
+                cell.imageView.contentMode = .scaleAspectFill
             }
         }
         return cell

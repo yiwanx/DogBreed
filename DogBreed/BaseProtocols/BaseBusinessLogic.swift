@@ -4,6 +4,6 @@
 
 import Foundation
 
-protocol BaseBusinessLogic {
+protocol BaseBusinessLogic: AnyObject {
     func load()
 }

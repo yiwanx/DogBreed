@@ -8,7 +8,7 @@ import UIKit
 class PhotoCollectionCell: UICollectionViewCell {
 
     var imageView = UIImageView()
-    var id = ""
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)

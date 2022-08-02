@@ -21,14 +21,4 @@ class Service {
         }
     }
 
-    public func fetchImage(from url: URL)  async throws -> UIImage {
-        do {
-            let (data, URLResponse) = await try URLSession.shared.data(from: url)
-            guard let image = data as? UIImage else { throw DecodingError.imageCantBeDecoded}
-            return image
-        } catch {
-            throw error
-        }
-    }
-
 }

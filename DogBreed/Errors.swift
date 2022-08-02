@@ -11,3 +11,8 @@ public enum DecodingError: Error {
 public enum URLError: Error {
     case isNotURL
 }
+
+public enum HTTPResponseError: Error {
+    case unsuccessful
+}
+
