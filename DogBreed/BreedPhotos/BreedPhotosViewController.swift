@@ -4,7 +4,7 @@
 
 import UIKit
 
-protocol BreedPhotosDisplayLogic: BreedPhotoDetailDelegate, AnyObject {
+protocol BreedPhotosDisplayLogic: BreedPhotoDetailDelegate, ErrorDisplaying {
     func displayPhotos(_ models: [BreedPhotoModel])
 }
 

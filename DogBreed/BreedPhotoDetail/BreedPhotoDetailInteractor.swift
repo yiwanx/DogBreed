@@ -23,10 +23,15 @@ class BreedPhotoDetailInteractor: BreedPhotoDetailBusinessLogic, Contextable {
     func load() {
         Task {
             guard let url = URL(string: model.urlString) else { return }
-            let image = try await ImageLoader.shared.fetch(.init(url: url))
-            await MainActor.run {
-                viewController?.displayPhoto(image)
+            do {
+                let image = try await ImageLoader.shared.fetch(.init(url: url))
+                await MainActor.run {
+                    viewController?.displayPhoto(image)
+                }
+            } catch {
+                viewController?.displayError(error)
             }
+
         }
 
     }
@@ -50,7 +55,7 @@ class BreedPhotoDetailInteractor: BreedPhotoDetailBusinessLogic, Contextable {
         do {
             try context.save()
         } catch {
-            print("Saving error")
+            viewController?.displayError(error)
         }
     }
 
@@ -64,7 +69,7 @@ class BreedPhotoDetailInteractor: BreedPhotoDetailBusinessLogic, Contextable {
         do {
             try context.save()
         } catch {
-            print("Saving context error")
+            viewController?.displayError(error)
         }
     }
 

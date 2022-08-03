@@ -4,7 +4,7 @@
 
 import UIKit
 
-protocol BreedListDisplayLogic: class {
+protocol BreedListDisplayLogic: ErrorDisplaying {
     func display(_ list: [String])
 }
 

@@ -4,7 +4,7 @@
 
 import UIKit
 
-protocol BreedPhotoDetailDisplayLogic: class {
+protocol BreedPhotoDetailDisplayLogic: ErrorDisplaying {
     func displayPhoto(_ image: UIImage)
 }
 

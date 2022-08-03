@@ -18,7 +18,7 @@ class BreedListInteractor: BreedListBusinessLogic {
                 let data = try await Service.shared.fetchData(from: .allBreedsList, type: BreedList.self)
                 viewController?.display(data.breedList)
             } catch {
-                print(error)
+                viewController?.displayError(error)
             }
         }
     }

@@ -23,7 +23,7 @@ class BreedPhotosInteractor: BreedPhotosBusinessLogic {
                 let models = data.message.map { BreedPhotoModel(urlString: $0, breed: title)}
                 viewController?.displayPhotos(models)
             } catch {
-                print(error)
+                viewController?.displayError(error)
             }
         }
     }
