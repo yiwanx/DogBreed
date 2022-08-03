@@ -63,7 +63,7 @@ class BreedPhotosViewController: UIViewController, BreedPhotosDisplayLogic {
     }
 
     func displayPhotos(_ models: [BreedPhotoModel]) {
-        /// If models are the same, the ignoring the call
+        /// If models are the same, then ignoring the call
         guard self.models != models else { return }
         self.models = models
         DispatchQueue.main.async { [weak gridCollectionView] in

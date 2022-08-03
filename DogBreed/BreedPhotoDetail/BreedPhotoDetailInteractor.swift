@@ -26,7 +26,7 @@ class BreedPhotoDetailInteractor: BreedPhotoDetailBusinessLogic, Contextable {
             do {
                 let image = try await ImageLoader.shared.fetch(.init(url: url))
                 await MainActor.run {
-                    viewController?.displayPhoto(image)
+                    viewController?.displayPhoto(image, with: model.breed)
                 }
             } catch {
                 viewController?.displayError(error)

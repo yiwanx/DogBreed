@@ -5,7 +5,7 @@
 import UIKit
 
 protocol BreedPhotoDetailDisplayLogic: ErrorDisplaying {
-    func displayPhoto(_ image: UIImage)
+    func displayPhoto(_ image: UIImage, with breedString: String)
 }
 
 protocol BreedPhotoDetailDelegate: AnyObject {
@@ -61,21 +61,22 @@ class BreedPhotoDetailViewController: UIViewController, BreedPhotoDetailDisplayL
         delegate?.reloadCollection()
     }
 
-    func displayPhoto(_ image: UIImage) {
+    func displayPhoto(_ image: UIImage, with breedString: String) {
         mainImageView.image = image
         let width = view.frame.width
         let height = (image.size.height / image.size.width) * view.frame.width
         mainImageView.configure(with: .init(x: 0, y: 0, width: width, height: height))
         view.addSubview(mainImageView)
-        addLikeStack()
+        addInfoStack(with: breedString)
     }
 
-    func addLikeStack() {
+    func addInfoStack(with breedString: String) {
         let stack = UIStackView()
         stack.distribution = .fillProportionally
         heartImageView.image = heartImage
         heartImageView.configure(with: .init(origin: .zero, size: .init(width: 50, height: 50)))
-        let label = configuredLabel(frame: .init(origin: .zero, size: .init(width: 300, height: 50)), text: "Add to favourites")
+        let label = configuredLabel(frame: .init(origin: .zero, size: .init(width: 300, height: 50)),
+                text: breedString)
         stack.addArrangedSubview(heartImageView)
         stack.addArrangedSubview(label)
         stack.frame = .init(x: 10, y: mainImageView.frame.height + 10, width: view.frame.width, height: 50)
@@ -102,7 +103,7 @@ extension UIImageView {
 extension UIViewController {
     func configuredLabel(frame: CGRect, text: String) -> UILabel {
         let label = UILabel(frame: frame)
-        label.text = text
+        label.text = text.capitalized
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
