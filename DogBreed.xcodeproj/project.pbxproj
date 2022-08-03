@@ -25,7 +25,6 @@
 		D649A1D15CF25D490E9BB8E4 /* BreedListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64616E24B6C7DB9A9710813 /* BreedListInteractor.swift */; };
 		D64BDA8BF7A4942895CCD5DD /* BaseBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64CE5E7EC7518BD1C349AD0 /* BaseBusinessLogic.swift */; };
 		D64BFB45BAF0E06D9D75AB27 /* Contextable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6488FD79B8313DA84F6E5D2 /* Contextable.swift */; };
-		D64C1DEF5529A23BC0316F3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D649E360C3FB370BAAD69065 /* ViewController.swift */; };
 		D64C483B08EE295C57120105 /* ViewControllerErrorDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64299A892E0922961E63AC2 /* ViewControllerErrorDisplaying.swift */; };
 		D64C5E37F7B3BCF181F4854E /* DogBreed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D646C4D1A0188A09084E509B /* DogBreed.xcdatamodeld */; };
 		D64CF2BD8F1CFD1500304C8C /* BreedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64777A173DF7B72868B5198 /* BreedList.swift */; };
@@ -81,7 +80,6 @@
 		D6482DD44E3E8DAE9C033DAE /* DogBreedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogBreedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6488FD79B8313DA84F6E5D2 /* Contextable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contextable.swift; sourceTree = "<group>"; };
 		D649B3F42BD1AC42C77667A1 /* DogBreedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D649E360C3FB370BAAD69065 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D64B605AE89DDA62D84013D4 /* BreedPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedPhotoModel.swift; sourceTree = "<group>"; };
 		D64C5A6AFECD3822DC2B3F3E /* BreedURLStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedURLStrings.swift; sourceTree = "<group>"; };
 		D64C91F5337F02FE3CE43F34 /* URLS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLS.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 				D646C4D1A0188A09084E509B /* DogBreed.xcdatamodeld */,
 				D6453A7D92C85A5B399CF00B /* Info.plist */,
 				D646BF1C762B1FE3F2430B57 /* SceneDelegate.swift */,
-				D649E360C3FB370BAAD69065 /* ViewController.swift */,
 				D6416FB0B45C14FCDFA8F2D6 /* BreedList */,
 				D647A1CFF73C531DB0C53883 /* BaseProtocols */,
 				D64C91F5337F02FE3CE43F34 /* URLS.swift */,
@@ -365,7 +362,6 @@
 				D6426D86AC434B0B1C60751C /* AppDelegate.swift in Sources */,
 				D64C5E37F7B3BCF181F4854E /* DogBreed.xcdatamodeld in Sources */,
 				D64DF47EC5C081B6BE846D50 /* SceneDelegate.swift in Sources */,
-				D64C1DEF5529A23BC0316F3F /* ViewController.swift in Sources */,
 				D64FA0E7C606DF40C992A76F /* BreedListViewController.swift in Sources */,
 				D649A1D15CF25D490E9BB8E4 /* BreedListInteractor.swift in Sources */,
 				D64BDA8BF7A4942895CCD5DD /* BaseBusinessLogic.swift in Sources */,

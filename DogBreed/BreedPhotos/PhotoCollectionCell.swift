@@ -8,7 +8,6 @@ import UIKit
 class PhotoCollectionCell: UICollectionViewCell {
 
     var imageView = UIImageView()
-    var activityIndicator = UIActivityIndicatorView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +24,6 @@ class PhotoCollectionCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
-        activityIndicator.stopAnimating()
     }
 }
 
